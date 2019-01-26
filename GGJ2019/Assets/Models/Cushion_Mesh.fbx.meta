@@ -1,17 +1,26 @@
 fileFormatVersion: 2
-guid: 013b037dea3ae443d848e41827d9227c
-timeCreated: 1548519909
+guid: 5e5199d00cfa14ada97e21f6b2077eac
+timeCreated: 1548521697
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCube48
+    100004: pCube49
+    100006: pSphere30
+    100008: transform102
+    100010: transform103
     400000: //RootNode
+    400002: pCube48
+    400004: pCube49
+    400006: pSphere30
+    400008: transform102
+    400010: transform103
     2100000: lambert1
-    2100002: lambert3
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: polySurface77
+    2300000: pCube49
+    3300000: pCube49
+    4300000: pCube49
     9500000: //RootNode
   externalObjects: {}
   materials:

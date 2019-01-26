@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: 013b037dea3ae443d848e41827d9227c
-timeCreated: 1548519909
+guid: 0638b8c7180e34824a00f207d7f8278b
+timeCreated: 1548522969
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: spectrum:group4
+    100004: spectrum:group5
+    100006: spectrum:pCylinder1
     400000: //RootNode
-    2100000: lambert1
-    2100002: lambert3
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: polySurface77
+    400002: spectrum:group4
+    400004: spectrum:group5
+    400006: spectrum:pCylinder1
+    2100000: lambert3
+    2300000: spectrum:pCylinder1
+    3300000: spectrum:pCylinder1
+    4300000: spectrum:pCylinder1
     9500000: //RootNode
   externalObjects: {}
   materials:
