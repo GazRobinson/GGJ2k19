@@ -92,7 +92,7 @@ public class HandManager : MonoBehaviour {
         else {
             rig.gameObject.SetActive( true );
             ThirdHand.gameObject.SetActive( false );
-          //  print( stickInput.y );
+
             if ( stickInput.sqrMagnitude > 0 ) {
                 LeftHand.localPosition = StickAnchor.localPosition + ( Vector3 )( stickInput * stickOffset );
                 c_manager.SetStick( stickInput );
@@ -107,7 +107,6 @@ public class HandManager : MonoBehaviour {
                 LeftHand.localPosition = StickAnchor.localPosition;
                 c_manager.SetStick( Vector2.zero );
                 c_manager.SetDPad( Vector2.zero );
-
             }
             GetButtons();
         }

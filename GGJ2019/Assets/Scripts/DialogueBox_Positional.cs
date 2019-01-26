@@ -11,7 +11,7 @@ public class DialogueBox_Positional : DialogueBox {
         Vector3 lookAt = Camera.main.transform.forward;
         lookAt.y = 0f;
         float dot = Vector2.Dot( lookAtTarget, lookAt );
-        Debug.Log( dot );   
+     //   Debug.Log( dot );   
              canvasGroup.alpha = dot;
     }
     protected override void OnInit( DialogueManager dm ) {

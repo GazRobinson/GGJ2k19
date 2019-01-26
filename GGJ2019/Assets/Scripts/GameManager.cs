@@ -60,15 +60,30 @@ public class GameManager : MonoBehaviour {
         if ( stageEnded != null ) {
             stageEnded();
         }
+        stageEnded = dialogueBuilder.HandleStageEnd;
+        RunStage();
+    }
+    void EndStage(int nextStage) {
+        Debug.Log( "Setting next stage to: " + nextStage );
+        Stage = nextStage;
+        if ( stageEnded != null ) {
+            stageEnded();
+        }
+        stageEnded = dialogueBuilder.HandleStageEnd;
         RunStage();
     }
     void DoThings() {
         if ( currentStage.things != null ) {
             foreach ( Thing t in currentStage.things ) {
                 switch ( t.type ) {
-                    case "Dialogue":
+                    case "dialogue":
                         DialogueBox box = dialogueBuilder.Build( t );
                         box.SetText( t.text );
+                        break;
+                    case "fetch":
+                        FetchManager fm = gameObject.AddComponent<FetchManager>();
+                        fm.Init( t, EndStage );
+                        stageEnded += fm.Cleanup;
                         break;
                 }
             }
