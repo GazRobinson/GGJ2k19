@@ -13,20 +13,24 @@ public class HandManager : MonoBehaviour {
 
     public bool TouchMode = false;
 
+    public float GrabRange = 0.2f;
     private float PawLength = 1.0f;
     private float PawYaw = 0f;
     private float PawPitch = 0f;
+    Transform pawEnd;
+    GameObject grabbedObject = null;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rig = transform.Find( "Rig" );
         ThirdHand = transform.Find( "Long_Paw" );
+        pawEnd = ThirdHand.GetChild( 0 ).GetChild( 1 );
         LeftHand = rig.Find( "Paw_left" );
         RightHand = rig.Find( "Paw_right" );
         StickAnchor = rig.Find( "StickAnchor" );
         DPadAnchor = rig.Find( "PadAnchor" );
     }
-	
+
 	// Update is called once per frame
 	void Update () {
         
@@ -34,6 +38,42 @@ public class HandManager : MonoBehaviour {
         Vector2 dPadInput = new Vector2( Input.GetAxis( "DPad_H" ), Input.GetAxis( "DPad_V" ) );
         TouchMode = Input.GetButton( "Z" );
         if ( TouchMode ) {
+            if ( Input.GetButtonDown( "R" ) ) {
+                Collider[] list = Physics.OverlapSphere( pawEnd.position, GrabRange, ~(1<<8) );
+                if ( list.Length > 0 ) {
+                    print( "Found: " + list.Length );
+                    float range = Mathf.Infinity;
+                    Rigidbody rb = null;
+                    
+                    foreach ( Collider col in list ) {
+                        rb = col.GetComponent<Rigidbody>();
+                        if ( rb != null ) {
+                            float dist = Vector3.Distance( col.transform.position, pawEnd.position );
+                            if ( dist < range ) {
+                                grabbedObject = col.gameObject;
+                                range = dist;
+                            }
+                        }
+                    }
+
+                    if ( grabbedObject != null ) {
+                        grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
+                       // grabbedObject.transform.SetParent( pawEnd );
+                    }
+                }
+            }
+            if ( Input.GetButtonUp( "R" ) ) {
+                if ( grabbedObject != null ) {
+
+                        grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+                    //grabbedObject.transform.SetParent( null );
+                    grabbedObject = null;
+                }
+            }
+            if ( grabbedObject != null ) {
+                grabbedObject.transform.position = pawEnd.position;
+            }
+
             rig.gameObject.SetActive( false );
             ThirdHand.gameObject.SetActive( true );
 
@@ -104,5 +144,12 @@ public class HandManager : MonoBehaviour {
             c_manager.ReleaseButton( Button.C_DOWN );
         if ( Input.GetButtonUp( "C_LEFT" ) )
             c_manager.ReleaseButton( Button.C_LEFT );
+    }
+
+    private void OnDrawGizmos() {
+        if ( pawEnd != null ) {
+            Gizmos.color = new Color( 1.0f, 0.0f, 0.0f, 0.25f );
+            Gizmos.DrawSphere( pawEnd.position, GrabRange );
+        }
     }
 }
