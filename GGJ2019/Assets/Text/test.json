@@ -1,0 +1,20 @@
+{
+	"ScenarioName" : "Card",
+	"Toast" : {
+		"Name" : "Batman",
+		"Count" : 1337,
+		"Pie" : [1,2,3]
+	},
+	"Stages": [
+		{
+			"id":0,
+			"Name":"Hagrid",
+			"Number":15
+		},
+		{
+			"Name":"Harry",
+			"Number":17
+		}
+	]	
+
+}

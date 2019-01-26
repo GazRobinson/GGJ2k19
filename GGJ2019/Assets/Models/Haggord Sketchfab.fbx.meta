@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 8dd4a81e91ea44ed9a03aac1b5462c81
+timeCreated: 1548459969
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature Hagrid
+    100002: bip_collar_L
+    100004: bip_collar_R
+    100006: bip_foot_L
+    100008: bip_foot_L_end
+    100010: bip_foot_R
+    100012: bip_foot_R_end
+    100014: bip_hand_L
+    100016: bip_hand_R
+    100018: bip_head
+    100020: bip_head_end
+    100022: bip_hip_L
+    100024: bip_hip_R
+    100026: bip_knee_L
+    100028: bip_knee_R
+    100030: bip_lowerArm_L
+    100032: bip_lowerArm_R
+    100034: bip_pelvis
+    100036: bip_spine_0
+    100038: bip_spine_1
+    100040: bip_thumb_0_L
+    100042: bip_thumb_0_R
+    100044: bip_thumb_1_L
+    100046: bip_thumb_1_L_end
+    100048: bip_thumb_1_R
+    100050: bip_thumb_1_R_end
+    100052: bip_upperArm_L
+    100054: bip_upperArm_R
+    100056: //RootNode
+    100058: Hagrid
+    400000: Armature Hagrid
+    400002: bip_collar_L
+    400004: bip_collar_R
+    400006: bip_foot_L
+    400008: bip_foot_L_end
+    400010: bip_foot_R
+    400012: bip_foot_R_end
+    400014: bip_hand_L
+    400016: bip_hand_R
+    400018: bip_head
+    400020: bip_head_end
+    400022: bip_hip_L
+    400024: bip_hip_R
+    400026: bip_knee_L
+    400028: bip_knee_R
+    400030: bip_lowerArm_L
+    400032: bip_lowerArm_R
+    400034: bip_pelvis
+    400036: bip_spine_0
+    400038: bip_spine_1
+    400040: bip_thumb_0_L
+    400042: bip_thumb_0_R
+    400044: bip_thumb_1_L
+    400046: bip_thumb_1_L_end
+    400048: bip_thumb_1_R
+    400050: bip_thumb_1_R_end
+    400052: bip_upperArm_L
+    400054: bip_upperArm_R
+    400056: //RootNode
+    400058: Hagrid
+    2100000: Hagrid
+    4300000: Hagrid
+    7400000: Armature Hagrid|Idle
+    7400002: Armature Hagrid|T-Pose
+    7400004: Armature Hagrid|T-Pose.001
+    9500000: //RootNode
+    13700000: Hagrid
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
