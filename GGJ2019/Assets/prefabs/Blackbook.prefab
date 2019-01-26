@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 95878702565510734}
   - component: {fileID: 54997514206381858}
   m_Layer: 0
-  m_Name: blackBook
+  m_Name: Blackbook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

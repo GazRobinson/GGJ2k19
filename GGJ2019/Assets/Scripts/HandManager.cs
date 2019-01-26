@@ -52,7 +52,7 @@ public class HandManager : MonoBehaviour {
         else {
             rig.gameObject.SetActive( true );
             ThirdHand.gameObject.SetActive( false );
-            print( stickInput.y );
+          //  print( stickInput.y );
             if ( stickInput.sqrMagnitude > 0 ) {
                 LeftHand.localPosition = StickAnchor.localPosition + ( Vector3 )( stickInput * stickOffset );
                 c_manager.SetStick( stickInput );

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.408
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29023445, g: 0.32453492, b: 0.37850037, a: 0.408}
+  m_IndirectSpecularColor: {r: 0.29024458, g: 0.32454658, b: 0.3785058, a: 0.408}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -765,6 +765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBoxColor: {r: 0.26811203, g: 0.6397059, b: 0.30142733, a: 1}
   fontColor: {r: 0, g: 0, b: 0, a: 0}
+  positional: 1
 --- !u!4 &536864647
 Transform:
   m_ObjectHideFlags: 0
@@ -1239,6 +1240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBoxColor: {r: 0.63235295, g: 0.24178201, b: 0.24178201, a: 1}
   fontColor: {r: 0, g: 0, b: 0, a: 0}
+  positional: 1
 --- !u!4 &806528481
 Transform:
   m_ObjectHideFlags: 0
@@ -2709,6 +2711,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 114823543532054352, guid: 5d9db7e642ef14689a909f921d7fd52f,
+    type: 2}
+  boxPrefab_Positional: {fileID: 114070225408096052, guid: 001f60e7f25a44819b27eabdf9164b5f,
     type: 2}
   currentBoxes: []
 --- !u!114 &1528877155

@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 95570090548716400}
   - component: {fileID: 54598500112579884}
   m_Layer: 0
-  m_Name: blueBook
+  m_Name: BlueBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
