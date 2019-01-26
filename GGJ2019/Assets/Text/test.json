@@ -5,7 +5,7 @@
 			"Stages": [
 				{
 					"id":0,
-					"completion":"time",
+					"completion":"confirm",
 					"time":5,
 					"things":[
 						{
@@ -52,13 +52,13 @@
 				},
 				{
 					"id":3,
-					"completion":"time",
 					"time":10,
+					"completion":"confirm",
 					"things":[
 						{
 							"type":"dialogue",
-							"owner":"Father",
-							"text":"Cheers buddy."
+							"owner":"Player",
+							"text":"I have seen the way."
 						}
 					]
 				}

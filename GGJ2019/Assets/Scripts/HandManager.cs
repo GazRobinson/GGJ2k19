@@ -12,8 +12,11 @@ public class HandManager : MonoBehaviour {
     Transform DPadAnchor;
 
     public bool TouchMode = false;
-
+    public float handAcceleration = 1.0f;
+    public float handSpeed = 0.0f;
+    public float maxHandSpeed = 0.0f;
     public float GrabRange = 0.2f;
+    public float grabSpeed = 2.0f;
     private float PawLength = 1.0f;
     private float PawYaw = 0f;
     private float PawPitch = 0f;
@@ -78,7 +81,7 @@ public class HandManager : MonoBehaviour {
             ThirdHand.gameObject.SetActive( true );
 
             if ( Input.GetButton( "C_UP" ) )
-                PawLength += 1.0f * Time.deltaTime;
+                PawLength += grabSpeed * Time.deltaTime;
             if ( Input.GetButton( "C_DOWN" ) )
                 PawLength = Mathf.Max( 1.0f, PawLength - 1.0f * Time.deltaTime );
 

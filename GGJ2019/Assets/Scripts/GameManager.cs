@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour {
     private DialogueBuilder dialogueBuilder;
 
     private System.Action stageEnded;
-
+    private System.Action ConfirmPressed;
+    private float stageTime = 0;
+    private float targetTime = 0;
     private int Stage = 0;
 	// Use this for initialization
 	void Start () {
@@ -24,9 +26,15 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        stageTime += Time.deltaTime;
         if ( Input.GetKeyDown( KeyCode.Space ) ) {
             PickScenario();
             BeginScenario();
+        }
+        if ( stageTime > targetTime && Input.GetButton( "A" ) ) {
+            if ( ConfirmPressed != null ) {
+                ConfirmPressed();
+            }
         }
 	}
     void PickScenario() {
@@ -43,7 +51,7 @@ public class GameManager : MonoBehaviour {
             Debug.Log( "End scenario" );
             return;
         }
-
+        stageTime = 0f;
         currentStage = currentScenario.Stages[Stage];
 
         //Check completion status
@@ -51,6 +59,13 @@ public class GameManager : MonoBehaviour {
             case "time":
                 print( "Timed" );
                 Invoke( "EndStage", currentStage.time );
+                break;
+            case "thing":
+
+                break;
+            case "confirm":
+                ConfirmPressed += EndStage;
+                targetTime = currentStage.time;
                 break;
         }
         DoThings();
