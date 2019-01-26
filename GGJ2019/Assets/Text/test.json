@@ -1,29 +1,66 @@
 {
 	"scenarios":[
 			{
-			"ScenarioName" : "Card",
+			"ScenarioName" : "Test",
 			"Stages": [
 				{
 					"id":0,
 					"completion":"time",
 					"time":5,
 					"things":[
-							{
-								"type":"Dialogue",
-								"owner":"Mother",
-								"text":"Do you love me?"
-							},
-							{
-								"type":"Dialogue",
-								"owner":"Father",
-								"text":"Do you love me????"
-							}
-						]
+						{
+							"type":"dialogue",
+							"owner":"Mother",
+							"text":"Give me the cat."
+						},
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"Give ME the cat."
+						}
+					]
 				},
 				{
-					"id":0,
+					"id":1,
+					"completion":"action",
+					"things":[
+						{
+							"type":"fetch",
+							"target":"sibling",
+							"owner":"Mother",
+							"next":2
+						},
+						{
+							"type":"fetch",
+							"target":"sibling",
+							"owner":"Father",
+							"next":3
+						}
+					]
+				},
+				{
+					"id":2,
 					"completion":"time",
-					"time":10
+					"time":10,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Mother",
+							"text":"Thank you. I love you."
+						}
+					]
+				},
+				{
+					"id":3,
+					"completion":"time",
+					"time":10,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"Cheers buddy."
+						}
+					]
 				}
 			]	
 		}

@@ -617,10 +617,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1807760512476112, guid: 3416de63a078e41a094aeeccdbc17f82, type: 2}
-      propertyPath: m_Name
-      value: characterPaws
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3416de63a078e41a094aeeccdbc17f82, type: 2}
   m_IsPrefabParent: 0

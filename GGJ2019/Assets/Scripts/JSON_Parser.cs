@@ -36,28 +36,23 @@ public class Scenarios {
 }
 [System.Serializable]
 public class Scenario {
-    public string ScenarioName = "NULL";    
-    public Stage[] Stages;
-}
-
-[System.Serializable]
-public class ToastType {
-    public string Name = "NULL";
-    public int Count;
-    public int[] Pie;
+    public string   ScenarioName = "NULL";    
+    public Stage[]  Stages;
 }
 
 [System.Serializable]
 public class Stage {
-    public int id = -1;
-    public string completion;
-    public int time;
-    public Thing[] things;
+    public int      id = -1;
+    public string   completion;
+    public int      time;
+    public Thing[]  things;
 }
 
 [System.Serializable]
 public class Thing {
-    public string type;
-    public string owner;
-    public string text;
+    public string   type;
+    public string   owner;
+    public string   text;
+    public string   target;
+    public int      next;
 }
