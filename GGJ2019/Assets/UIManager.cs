@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour {
 	}
 
     public void AddChild( GameObject go ) {
-        go.transform.SetParent( transform );
+       // go.transform.SetParent( transform );
     }
 
 	// Update is called once per frame

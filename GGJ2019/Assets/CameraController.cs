@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-      // TurnHead( Input.GetAxis( "Horizontal" ));
+       TurnHead( Input.GetAxis( "DPad_H" ));
         if ( transform.eulerAngles != targetEulerAngles ) {
             //transform.localEulerAngles =  Vector3.Lerp( transform.eulerAngles, targetEulerAngles, 0.1f );
             transform.localRotation = Quaternion.Lerp( transform.localRotation, targetQuat, 0.1f );

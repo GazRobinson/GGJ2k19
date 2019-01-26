@@ -5,4 +5,5 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour {
     public Color textBoxColor;
     public Color fontColor;
+    public bool positional = true;
 }

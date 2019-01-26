@@ -67,7 +67,8 @@ public class GameManager : MonoBehaviour {
             foreach ( Thing t in currentStage.things ) {
                 switch ( t.type ) {
                     case "Dialogue":
-                        dialogueBuilder.Build( t );
+                        DialogueBox box = dialogueBuilder.Build( t );
+                        box.SetText( t.text );
                         break;
                 }
             }

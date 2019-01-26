@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 224490353600951712}
   - component: {fileID: 222691508902414710}
   - component: {fileID: 114210816397050452}
-  - component: {fileID: 114823543532054352}
+  - component: {fileID: 114070225408096052}
+  - component: {fileID: 225515088154936156}
   m_Layer: 5
-  m_Name: DialogueBox
+  m_Name: DialogueBox_Positional
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +47,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114070225408096052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243895560743360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf871a3bbe6144aca9f528b0b027488f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
 --- !u!114 &114210816397050452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,17 +86,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114823543532054352
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1243895560743360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7326d88484fdd4ce28b703e2fea0163a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114964965508320228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,3 +168,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!225 &225515088154936156
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243895560743360}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

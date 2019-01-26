@@ -5,41 +5,72 @@ using UnityEngine;
 public class HandManager : MonoBehaviour {
     public ControllerManager c_manager;
 
-    private Transform LeftHand, RightHand;
+    private Transform LeftHand, RightHand, ThirdHand;
     private float stickOffset = 0.04f, padOffset = 0.04f;
+    Transform rig;
     Transform StickAnchor;
     Transform DPadAnchor;
 
+    public bool TouchMode = false;
+
+    private float PawLength = 1.0f;
+    private float PawYaw = 0f;
+    private float PawPitch = 0f;
+
 	// Use this for initialization
 	void Start () {
-        LeftHand = transform.Find( "Paw_left" );
-        RightHand = transform.Find( "Paw_right" );
-        StickAnchor = transform.Find( "StickAnchor" );
-        DPadAnchor = transform.Find( "PadAnchor" );
+        rig = transform.Find( "Rig" );
+        ThirdHand = transform.Find( "Long_Paw" );
+        LeftHand = rig.Find( "Paw_left" );
+        RightHand = rig.Find( "Paw_right" );
+        StickAnchor = rig.Find( "StickAnchor" );
+        DPadAnchor = rig.Find( "PadAnchor" );
     }
 	
 	// Update is called once per frame
 	void Update () {
+        
         Vector2 stickInput = new Vector2( Input.GetAxis( "Horizontal" ), Input.GetAxis( "Vertical" ) );
         Vector2 dPadInput = new Vector2( Input.GetAxis( "DPad_H" ), Input.GetAxis( "DPad_V" ) );
-        print( stickInput.y );
-        if ( stickInput.sqrMagnitude > 0 ) {
-            LeftHand.localPosition = StickAnchor.localPosition + ( Vector3 )( stickInput * stickOffset );
-            c_manager.SetStick( stickInput );
-            c_manager.SetDPad( Vector2.zero );
-        }
-        else if ( dPadInput.sqrMagnitude > 0 ) {
-            LeftHand.localPosition = DPadAnchor.localPosition + ( Vector3 )( dPadInput * padOffset );
-            c_manager.SetDPad( dPadInput );
-            c_manager.SetStick( Vector2.zero );
-        }
-        else {
-            LeftHand.localPosition = StickAnchor.localPosition;
-            c_manager.SetStick( Vector2.zero );
-            c_manager.SetDPad( Vector2.zero );
+        TouchMode = Input.GetButton( "Z" );
+        if ( TouchMode ) {
+            rig.gameObject.SetActive( false );
+            ThirdHand.gameObject.SetActive( true );
+
+            if ( Input.GetButton( "C_UP" ) )
+                PawLength += 1.0f * Time.deltaTime;
+            if ( Input.GetButton( "C_DOWN" ) )
+                PawLength = Mathf.Max( 1.0f, PawLength - 1.0f * Time.deltaTime );
+
+            PawPitch =  Mathf.Clamp( PawPitch -stickInput.y * Time.deltaTime * 15.0f, -30f, 30f);
+            PawYaw = Mathf.Clamp( PawYaw  + stickInput.x * Time.deltaTime * 15.0f, -60f, 60f );
+            Quaternion rot = Quaternion.AngleAxis( PawPitch, transform.right ) * Quaternion.AngleAxis( PawYaw, transform.up );
+            ThirdHand.localRotation = rot;
+            ThirdHand.localScale = new Vector3( 1.0f, 1.0f, PawLength );
 
         }
-        GetButtons();
+        else {
+            rig.gameObject.SetActive( true );
+            ThirdHand.gameObject.SetActive( false );
+            print( stickInput.y );
+            if ( stickInput.sqrMagnitude > 0 ) {
+                LeftHand.localPosition = StickAnchor.localPosition + ( Vector3 )( stickInput * stickOffset );
+                c_manager.SetStick( stickInput );
+                c_manager.SetDPad( Vector2.zero );
+            }
+            else if ( dPadInput.sqrMagnitude > 0 ) {
+                LeftHand.localPosition = DPadAnchor.localPosition + ( Vector3 )( dPadInput * padOffset );
+                c_manager.SetDPad( dPadInput );
+                c_manager.SetStick( Vector2.zero );
+            }
+            else {
+                LeftHand.localPosition = StickAnchor.localPosition;
+                c_manager.SetStick( Vector2.zero );
+                c_manager.SetDPad( Vector2.zero );
+
+            }
+            GetButtons();
+        }
 	}
     void GetButtons() {
         //Down
