@@ -1,1 +1,12 @@
+*~
+.DS_Store
+*.csproj
+*.sln
+GGJ2017/Library
+GGJ2017/Temp
+Library
+Temp
+*.pidb
+*.pidb
+*.suo
 GGJ2019/.vs
