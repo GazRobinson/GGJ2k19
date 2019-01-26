@@ -1,18 +1,42 @@
 fileFormatVersion: 2
-guid: ba2f0238aa86746419e223eb65ab9261
-timeCreated: 1548517647
+guid: a5c1e9dd689db46808f6205d75067118
+timeCreated: 1548512463
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube13
+    100002: polySurface82
+    100004: polySurface86
+    100006: polySurface88
+    100008: polySurface89
+    100010: polySurface90
+    100012: polySurface90 1
+    100014: Sofa_so_good1
+    100016: transform101
+    100018: transform104
+    100020: transform105
+    100022: transform106
+    100024: transform107
+    100026: transform108
     400000: //RootNode
-    400002: pCube13
+    400002: polySurface82
+    400004: polySurface86
+    400006: polySurface88
+    400008: polySurface89
+    400010: polySurface90
+    400012: polySurface90 1
+    400014: Sofa_so_good1
+    400016: transform101
+    400018: transform104
+    400020: transform105
+    400022: transform106
+    400024: transform107
+    400026: transform108
     2100000: lambert1
-    2300000: pCube13
-    3300000: pCube13
-    4300000: pCube13
+    2300000: polySurface90
+    3300000: polySurface90
+    4300000: polySurface90
     9500000: //RootNode
   externalObjects: {}
   materials:
