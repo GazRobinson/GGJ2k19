@@ -13,9 +13,12 @@ public class DialogueBox_Positional : DialogueBox {
         float dot = Vector2.Dot( lookAtTarget, lookAt );
      //   Debug.Log( dot );   
         canvasGroup.alpha = Mathf.Min(1f, dot);
+        if ( canvasGroup.alpha > 0.75f )
+            lookAtDone = true;
     }
     protected override void OnInit( DialogueManager dm ) {
         base.OnInit( dm );
         owner = dm.transform;
+        lookAtDone = false;
     }
 }

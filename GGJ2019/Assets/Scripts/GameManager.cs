@@ -52,23 +52,32 @@ public class GameManager : MonoBehaviour {
     }
     void RunStage() {
         print( "Attempting Run stage " + Stage );
-        if ( Stage >= currentScenario.Stages.Length ) {
-            Debug.Log( "End scenario" );
-            runningScenario = false;
-            return;
-        }
+
         bool good = false;
-        for ( int i = 0; i < currentScenario.Stages.Length; i++ ) {
+        if ( !waterfall ) {
+            for ( int i = 0; i < currentScenario.Stages.Length; i++ ) {
 
-            if ( currentScenario.Stages[i].id == Stage ) {
+                if ( currentScenario.Stages[i].id == Stage ) {
 
-            print( "Found stage " + Stage );
-                currentStage = currentScenario.Stages[i];
-                good = true;
+                    print( "Found stage " + Stage );
+                    currentStage = currentScenario.Stages[i];
+                    good = true;
+                }
             }
+        }
+        else {
+            if ( Stage >= currentScenario.Stages.Length ) {
+                Debug.Log( "End scenario" );
+                runningScenario = false;
+                return;
+            }
+            good = true;
+            currentStage = currentScenario.Stages[Stage];
         }
         if ( !good ) {
             Debug.LogError( "Couldn't find stage ID:" + Stage.ToString() + " in " + currentScenario.ScenarioName );
+            runningScenario = false;
+            return;
         }
         stageTime = 0f;
         //currentStage = currentScenario.Stages[Stage];
@@ -77,7 +86,8 @@ public class GameManager : MonoBehaviour {
         switch ( currentStage.completion ) {
             case "time":
                 print( "Timed" );
-                Invoke( "EndStage", currentStage.time );
+                timer = currentStage.time;
+                //Invoke( "EndStage", currentStage.time );
                 break;
             case "action":
 
@@ -89,7 +99,9 @@ public class GameManager : MonoBehaviour {
         }
         DoThings();
     }
+    bool waterfall = false;
     void EndStage() {
+        waterfall = true;
         Stage++;
         if ( stageEnded != null ) {
             stageEnded();
@@ -98,6 +110,7 @@ public class GameManager : MonoBehaviour {
         RunStage();
     }
     void EndStage(int nextStage) {
+        waterfall = false;
         Debug.Log( "Setting next stage to: " + nextStage );
         Stage = nextStage;
         if ( stageEnded != null ) {
@@ -106,6 +119,11 @@ public class GameManager : MonoBehaviour {
         stageEnded = dialogueBuilder.HandleStageEnd;
         RunStage();
     }
+    float timer = 0f;
+    void StartTimer() {
+        
+        Invoke( "EndStage", currentStage.time );
+    }
     void DoThings() {
         if ( currentStage.things != null ) {
             foreach ( Thing t in currentStage.things ) {
@@ -113,6 +131,8 @@ public class GameManager : MonoBehaviour {
                     case "dialogue":
                         DialogueBox box = dialogueBuilder.Build( t );
                         box.SetText( t.text );
+                        if(currentStage.completion == "time")
+                            box.LookedAt += StartTimer;
                         break;
                     case "fetch":
                         FetchManager fm = gameObject.AddComponent<FetchManager>();
