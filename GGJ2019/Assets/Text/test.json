@@ -17,7 +17,7 @@
                 },
 				{
 					"id":0,
-					"completion":"confirm",
+					"completion":"action",
 					"time":5,
 					"things":[
 						{
@@ -25,11 +25,23 @@
 							"owner":"Mother",
 							"text":"Give me the cat."
 						},
-						{
-							"type":"dialogue",
-							"owner":"Father",
-							"text":"Give ME the cat."
-						}
+                        {
+                            "type": "dialogue",
+                            "owner": "Father",
+                            "text": "Give ME the cat."
+                        },
+                        {
+                            "type": "fetch",
+                            "target": "_sibling",
+                            "owner": "Mother",
+                            "next": 2
+                        },
+                        {
+                            "type": "fetch",
+                            "target": "_sibling",
+                            "owner": "Father",
+                            "next": 3
+                        }
 					]
 				},
 				{
