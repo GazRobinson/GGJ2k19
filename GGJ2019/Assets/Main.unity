@@ -18484,7 +18484,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 114823543532054352, guid: 5d9db7e642ef14689a909f921d7fd52f,
     type: 2}
-  boxPrefab_Positional: {fileID: 0}
+  boxPrefab_Positional: {fileID: 114070225408096052, guid: 001f60e7f25a44819b27eabdf9164b5f,
+    type: 2}
   currentBoxes: []
 --- !u!114 &1528877155
 MonoBehaviour:
@@ -18512,7 +18513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2c843cceb9e424fb228e19e2c97a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenarioText: {fileID: 4900000, guid: 8cdc889af19ee4ebdb5bb1f9604b8bbb, type: 3}
+  scenarioText: {fileID: 4900000, guid: 97140b8bba48c4669816f7c5ca9b7012, type: 3}
 --- !u!4 &1528877157
 Transform:
   m_ObjectHideFlags: 0

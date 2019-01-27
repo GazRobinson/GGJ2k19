@@ -190,8 +190,7 @@ public class HandManager : MonoBehaviour {
     void CheckHighlights() {
         GameObject go = null;
         Collider[] list = Physics.OverlapSphere( pawEnd.position, GrabRange, ~( 1 << 8 ) );
-        if ( list.Length > 0 ) {
-            print( "Found: " + list.Length );
+        if ( list.Length > 0 ) {    
             float range = Mathf.Infinity;
             Rigidbody rb = null;
 

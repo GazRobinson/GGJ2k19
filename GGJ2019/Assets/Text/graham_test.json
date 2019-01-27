@@ -1,7 +1,5 @@
 {
 	"scenarios":[
-
-// scenario 1
 			{
 			"ScenarioName" : "Fetch the pencil",
 			"Stages": [
@@ -31,7 +29,7 @@
 							"target":"_pencil_0",
 							"owner":"Father",
 							"next":2
-						},
+						}
 					]
 				},
 				{
@@ -45,11 +43,9 @@
 							"text":"Thank you. Now i can erase the horrors of my past"
 						}
 					]
-				},
+				}
 			]	
-		}
-
-// scenario 2		
+		},
 			{
 			"ScenarioName" : "Fetch Weilder Of The Keyblade",
 			"Stages:" : [
@@ -102,9 +98,7 @@
 					]
 				}
 			]
-		}
-
-// scenario 3
+		},
 			{
 			"ScenarioName" : "Fetch The Sibling",
 			"Stages":[
@@ -150,9 +144,7 @@
 					]
 				}
 			]
-		}
-
-// scenario 4
+		},
 			{
 			"ScenarioName":"Fetch a cusion",
 			"Stages":[
@@ -165,7 +157,7 @@
 							"type":"dialogue",
 							"owner":"Mother",
 							"text":"The ol' war injury is flaring up again, I feel a flare in my lower back"
-						},
+						}
 					]	
 				},
 				{
@@ -177,7 +169,7 @@
 							"type":"dialogue",
 							"owner":"Mother",
 							"text":"Be a dear and fetch me a cusion to better ease the scars of battle"
-						},
+						}
 					]
 				},
 				{
@@ -186,9 +178,9 @@
 					"things":[
 						{
 							"type":"fetch",
-							"target":"_cusion_0",
+							"target":"_cushion",
 							"owner":"Mother",
-							"next":3,
+							"next":3
 						}
 					]
 				},
@@ -208,7 +200,7 @@
 					"id":4,
 					"completion":"time",
 					"time":3,
-					"thigns":[
+					"things":[
 						{
 							"type":"dialogue",
 							"owner":"Mother",

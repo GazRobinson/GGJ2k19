@@ -51,14 +51,27 @@ public class GameManager : MonoBehaviour {
         return true;
     }
     void RunStage() {
-        print( "Run stage " + Stage );
+        print( "Attempting Run stage " + Stage );
         if ( Stage >= currentScenario.Stages.Length ) {
             Debug.Log( "End scenario" );
             runningScenario = false;
             return;
         }
+        bool good = false;
+        for ( int i = 0; i < currentScenario.Stages.Length; i++ ) {
+
+            if ( currentScenario.Stages[i].id == Stage ) {
+
+            print( "Found stage " + Stage );
+                currentStage = currentScenario.Stages[i];
+                good = true;
+            }
+        }
+        if ( !good ) {
+            Debug.LogError( "Couldn't find stage ID:" + Stage.ToString() + " in " + currentScenario.ScenarioName );
+        }
         stageTime = 0f;
-        currentStage = currentScenario.Stages[Stage];
+        //currentStage = currentScenario.Stages[Stage];
 
         //Check completion status
         switch ( currentStage.completion ) {
@@ -66,7 +79,7 @@ public class GameManager : MonoBehaviour {
                 print( "Timed" );
                 Invoke( "EndStage", currentStage.time );
                 break;
-            case "thing":
+            case "action":
 
                 break;
             case "confirm":
