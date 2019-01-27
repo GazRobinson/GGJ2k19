@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogueBox : MonoBehaviour {
     protected Image bg;
     protected CanvasGroup canvasGroup;
+    public System.Action LookedAt;
     Text txt;
     int textSpeed = 2;
     string targetText = "";
@@ -15,6 +16,8 @@ public class DialogueBox : MonoBehaviour {
     float t = 0f;
     float tMult = 1f;
     bool doKill = false;
+    protected bool lookAtDone = true;
+    bool complete = false;
     private void Awake() {
         canvasGroup = GetComponent<CanvasGroup>();
     }
@@ -43,7 +46,14 @@ public class DialogueBox : MonoBehaviour {
         }
         DoUpdate();
 
+        if ( !complete && lookAtDone && count > targetText.Length + 10 ) {
+            complete = true;
+            if ( LookedAt != null ) {
+                LookedAt();
+            }
+        }
         if ( t < 0 && doKill ) {
+            LookedAt = null;
             Destroy( gameObject );
         }
     }

@@ -47,57 +47,51 @@
 			]	
 		},
 			{
-			"ScenarioName" : "Fetch Weilder Of The Keyblade",
-			"Stages:" : [
-				{
-					"id":0,
-					"completion":"time",
-					"time":2,
-					"things":[
-						{
-	 						"type":"dialogue",
-	 						"owner":"Father",
-	 						"text":"Child! Humour me. I bored of this giant keyblade weilder. I desire the smaller one by the Television"
-						}
-					]
-				},
-				{
-					"id":1,
-					"completion":"time",
-					"time":3,
-					"things":[
-						{
-							"type":"dialogue",
-							"owner":"Father",
-							"text":"Fetch it for me would you?"
-						}
-					]
-				},
-				{
-					"id":2,
-					"completion":"action",
-					"things":[
-						{
-							"type":"fetch",
-							"target":"_gazDoll_0",
-							"owner":"Father",
-							"next":3
-						}
-					]
-				},
-				{
-					"id":3,
-					"completion":"time",
-					"time":4,
-					"things":[
-						{
-							"type":"dialogue",
-							"owner":"Father",
-							"text":"Ahh, excellent. With this small key, I can finally unlock my true potential."
-						}
-					]
-				}
-			]
+			"ScenarioName" : "Fetch Wielder Of The Keyblade",
+                "Stages": [
+                    {
+                        "id": 0,
+                        "completion": "time",
+                        "time": 2,
+                        "things": [
+                            {
+                                "type": "dialogue",
+                                "owner": "Father",
+                                "text": "Child! Humour me. I bored of this giant keyblade weilder. I desire the smaller one by the Television"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "completion": "action",
+                        "time": 3,
+                        "things": [
+                            {
+                                "type": "dialogue",
+                                "owner": "Father",
+                                "text": "Fetch it for me would you?"
+                            },
+                            {
+                                "type": "fetch",
+                                "target": "_gazDoll_0",
+                                "owner": "Father",
+                                "next": 3
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "completion": "time",
+                        "time": 4,
+                        "things": [
+                            {
+                                "type": "dialogue",
+                                "owner": "Father",
+                                "text": "Ahh, excellent. With this small key, I can finally unlock my true potential."
+                            }
+                        ]
+                    }
+                ]
 		},
 			{
 			"ScenarioName" : "Fetch The Sibling",

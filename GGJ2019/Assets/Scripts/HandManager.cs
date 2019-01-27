@@ -61,7 +61,7 @@ public class HandManager : MonoBehaviour {
     Transform rig;
     Transform StickAnchor;
     Transform DPadAnchor;
-
+    public float maxPawLength = 3f;
     public bool TouchMode = true;
     public float handAcceleration = 10.0f;
     public float handSpeed = 0.0f;
@@ -74,8 +74,10 @@ public class HandManager : MonoBehaviour {
     Transform pawEnd;
     GameObject grabbedObject = null;
     private float zPos;
+    Transform pawCont; 
     // Use this for initialization
     void Start () {
+        TouchMode = true;
         rig = transform.Find( "Rig" );
         ThirdHand = transform.Find( "Long_Paw" );
         pawEnd = ThirdHand.GetChild( 0 ).GetChild( 1 );
@@ -83,6 +85,7 @@ public class HandManager : MonoBehaviour {
         RightHand = rig.Find( "Paw_right" );
         StickAnchor = rig.Find( "StickAnchor" );
         DPadAnchor = rig.Find( "PadAnchor" );
+        pawCont = ThirdHand.GetChild( 0 );
     }
 
 	// Update is called once per frame
@@ -148,15 +151,15 @@ public class HandManager : MonoBehaviour {
             ThirdHand.gameObject.SetActive( true );
 
             if ( Input.GetButton( "C_UP" ) )
-                PawLength += grabSpeed * Time.deltaTime;
+                PawLength = Mathf.Clamp( PawLength + grabSpeed * Time.deltaTime, 0.1f, maxPawLength ); 
             if ( Input.GetButton( "C_DOWN" ) )
-                PawLength = Mathf.Max( 1.0f, PawLength - grabSpeed * Time.deltaTime );
+                PawLength = Mathf.Clamp( PawLength - grabSpeed * Time.deltaTime, 0.1f, maxPawLength );
 
-            PawPitch =  Mathf.Clamp( PawPitch -stickInput.y * Time.deltaTime * handSpeed * (2f/PawLength), -30f, 30f);
-            PawYaw = Mathf.Clamp( PawYaw  + stickInput.x * Time.deltaTime * handSpeed * ( 2f / PawLength ), -60f, 60f );
+            PawPitch =  Mathf.Clamp( PawPitch -stickInput.y * Time.deltaTime * handSpeed , -30f, 30f);
+            PawYaw = Mathf.Clamp( PawYaw  + stickInput.x * Time.deltaTime * handSpeed, -60f, 60f );
             Quaternion rot = Quaternion.AngleAxis( PawPitch, transform.right ) * Quaternion.AngleAxis( PawYaw, transform.up );
             ThirdHand.localRotation = rot;
-            ThirdHand.localScale = new Vector3( 1.0f, 1.0f, PawLength );
+            pawCont.localPosition = new Vector3(0.0f,0.0f, PawLength );
 
         }
         else {
