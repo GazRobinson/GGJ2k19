@@ -1,0 +1,222 @@
+{
+	"scenarios":[
+
+// scenario 1
+			{
+			"ScenarioName" : "Fetch the pencil",
+			"Stages": [
+				{
+					"id":0,
+					"completion":"time",
+					"time":5,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"My child, please. I require the pencil. Fetch it for me"
+						},
+						{
+							"type":"dialogue",
+							"owner":"Mother",
+							"text":"Listen to your Father, he knows best"
+						}
+					]
+				},
+				{
+					"id":1,
+					"completion":"action",
+					"things":[
+						{
+							"type":"fetch",
+							"target":"_pencil_0",
+							"owner":"Father",
+							"next":2
+						},
+					]
+				},
+				{
+					"id":2,
+					"completion":"time",
+					"time":5,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"Thank you. Now i can erase the horrors of my past"
+						}
+					]
+				},
+			]	
+		}
+
+// scenario 2		
+			{
+			"ScenarioName" : "Fetch Weilder Of The Keyblade",
+			"Stages:" : [
+				{
+					"id":0,
+					"completion":"time",
+					"time":2,
+					"things":[
+						{
+	 						"type":"dialogue",
+	 						"owner":"Father",
+	 						"text":"Child! Humour me. I bored of this giant keyblade weilder. I desire the smaller one by the Television"
+						}
+					]
+				},
+				{
+					"id":1,
+					"completion":"time",
+					"time":3,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"Fetch it for me would you?"
+						}
+					]
+				},
+				{
+					"id":2,
+					"completion":"action",
+					"things":[
+						{
+							"type":"fetch",
+							"target":"_gazDoll_0",
+							"owner":"Father",
+							"next":3
+						}
+					]
+				},
+				{
+					"id":3,
+					"completion":"time",
+					"time":4,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"Ahh, excellent. With this small key, I can finally unlock my true potential."
+						}
+					]
+				}
+			]
+		}
+
+// scenario 3
+			{
+			"ScenarioName" : "Fetch The Sibling",
+			"Stages":[
+				{
+					"id":0,
+					"completion":"time",
+					"time":3,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Mother",
+							"text":" I require your sibling! We have plans to discuss"
+						},
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"Ah yes the plans, better not keep your Mother waiting"
+						}
+					]
+				},
+				{
+					"id":1,
+					"completion":"action",
+					"things":[
+						{
+							"type":"fetch",
+							"target":"_sibling_0",
+							"owner":"Mother",
+							"next":2
+						}
+					]
+				},
+				{
+					"id":2,
+					"completion":"time",
+					"time":4,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Mother",
+							"text":"Excellent, Fatimah Colon, take a seat next to me, I require your council on the invasion plans."
+						}
+					]
+				}
+			]
+		}
+
+// scenario 4
+			{
+			"ScenarioName":"Fetch a cusion",
+			"Stages":[
+				{	
+					"id":0,
+					"completion":"time",
+					"time":4,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Mother",
+							"text":"The ol' war injury is flaring up again, I feel a flare in my lower back"
+						},
+					]	
+				},
+				{
+					"id":1,
+					"completion":"time",
+					"time":3,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Mother",
+							"text":"Be a dear and fetch me a cusion to better ease the scars of battle"
+						},
+					]
+				},
+				{
+					"id":2,
+					"completion":"action",
+					"things":[
+						{
+							"type":"fetch",
+							"target":"_cusion_0",
+							"owner":"Mother",
+							"next":3,
+						}
+					]
+				},
+				{
+					"id":3,
+					"completion":"time",
+					"time":4,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Mother",
+							"text":"Ahhh thank you my child, it's difficult to concentrate sometimes when the arrow wound begins to play up"
+						}
+					]	
+				},
+				{
+					"id":4,
+					"completion":"time",
+					"time":3,
+					"thigns":[
+						{
+							"type":"dialogue",
+							"owner":"Mother",
+							"text":"The pain can be eased, the memories... they cannot"
+						}
+					]
+				}
+			]
+		}
+	]
+}
