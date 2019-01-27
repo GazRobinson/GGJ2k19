@@ -1,34 +1,23 @@
 fileFormatVersion: 2
-guid: 16aded0ee66464ce8b16f7c02050666c
-timeCreated: 1548599205
+guid: 9a36143c5cc6344469e740c21d8f4b15
+timeCreated: 1548599206
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: polySurface5
-    100002: polySurface6
-    100004: polySurface6 1
-    100006: polySurface7
-    100008: table
-    100010: transform19
-    100012: transform20
-    100014: transform21
-    100016: transform4
-    100018: //RootNode
-    400000: polySurface5
-    400002: polySurface6
-    400004: polySurface6 1
-    400006: polySurface7
-    400008: table
-    400010: transform19
-    400012: transform20
-    400014: transform21
-    400016: transform4
-    400018: //RootNode
+    100000: polySurface22
+    100002: polySurface8
+    100004: //RootNode
+    400000: polySurface22
+    400002: polySurface8
+    400004: //RootNode
     2100000: lambert5
-    2300000: polySurface6
-    3300000: polySurface6
-    4300000: polySurface6
+    2300000: polySurface22
+    2300002: polySurface8
+    3300000: polySurface22
+    3300002: polySurface8
+    4300000: polySurface8
+    4300002: polySurface22
     9500000: //RootNode
   externalObjects: {}
   materials:
