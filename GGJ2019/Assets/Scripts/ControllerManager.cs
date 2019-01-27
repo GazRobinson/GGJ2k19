@@ -27,7 +27,6 @@ public class ControllerManager : MonoBehaviour {
     public ControllerButton C_DOWN;
     public ControllerButton C_LEFT;
 
-
     private float maxStickTilt = 20.0f;
     private float maxPadTilt = 5.0f;
 
