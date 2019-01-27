@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour {
     private float targetTime = 0;
     private int Stage = 0;
     bool runningScenario = false;
+
+
+    public float GameTimer = 0f;
+
 	// Use this for initialization
 	void Start () {
         json = GetComponent<JSON_Parser>();
@@ -27,8 +31,9 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        GameTimer += Time.deltaTime;
         stageTime += Time.deltaTime;
-        if ( Input.GetKeyDown( KeyCode.Space ) ) {
+        if ( Input.GetKeyDown( KeyCode.Space ) || GameTimer > Random.Range(10f, 15f) ) {
             PickScenario();
             BeginScenario();
         }
@@ -68,6 +73,7 @@ public class GameManager : MonoBehaviour {
         else {
             if ( Stage >= currentScenario.Stages.Length ) {
                 Debug.Log( "End scenario" );
+                GameTimer = 0f;
                 runningScenario = false;
                 return;
             }
