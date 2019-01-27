@@ -146,7 +146,7 @@
 			]
 		},
 			{
-			"ScenarioName":"Fetch a cusion",
+			"ScenarioName":"Fetch a cushion",
 			"Stages":[
 				{	
 					"id":0,
@@ -168,7 +168,7 @@
 						{
 							"type":"dialogue",
 							"owner":"Mother",
-							"text":"Be a dear and fetch me a cusion to better ease the scars of battle"
+							"text":"Be a dear and fetch me a cushion to better ease the scars of battle"
 						}
 					]
 				},
@@ -205,6 +205,52 @@
 							"type":"dialogue",
 							"owner":"Mother",
 							"text":"The pain can be eased, the memories... they cannot"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ScenarioName":"Fetch The Plane",
+			"Stages":[
+				{
+					"id":0,
+					"completion":"time",
+					"time":4,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"We're going to need some way to fly to our location if we are to achieve this plan"
+						}
+					]
+				},
+				{
+					"id":1,
+					"completion":"action",
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"Be a sport and go fetch the mechanical flying bird for me!"
+						},
+						{
+							"type":"fetch",
+							"target":"_planeMobile_01",
+							"owner":"Father",
+							"next":2
+						}
+					]
+				},
+				{
+					"id":3,
+					"completion":"time",
+					"time":4,
+					"things":[
+						{
+							"type":"dialogue",
+							"owner":"Father",
+							"text":"METAL BIRD! METAL BIRD!"
 						}
 					]
 				}
