@@ -62,7 +62,7 @@ public class HandManager : MonoBehaviour {
     Transform StickAnchor;
     Transform DPadAnchor;
 
-    public bool TouchMode = false;
+    public bool TouchMode = true;
     public float handAcceleration = 10.0f;
     public float handSpeed = 0.0f;
     public float maxHandSpeed = 30.0f;
@@ -135,7 +135,7 @@ public class HandManager : MonoBehaviour {
             if ( Input.GetButtonUp( "R" ) ) {
                 if ( grabbedObject != null ) {
 
-                        grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+                    grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
                     //grabbedObject.transform.SetParent( null );
                     grabbedObject = null;
                 }

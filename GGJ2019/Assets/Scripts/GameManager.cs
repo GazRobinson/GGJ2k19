@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     private float stageTime = 0;
     private float targetTime = 0;
     private int Stage = 0;
+    bool runningScenario = false;
 	// Use this for initialization
 	void Start () {
         json = GetComponent<JSON_Parser>();
@@ -40,15 +41,20 @@ public class GameManager : MonoBehaviour {
     void PickScenario() {
         currentScenario = scenarioList[Random.Range( 0, scenarioList.Length )];
     }
-    void BeginScenario() {
+    bool BeginScenario() {
+        if ( runningScenario )
+            return false;
         print( "Starting scenario: " + currentScenario.ScenarioName );
+        runningScenario = true;
         Stage = 0;
         RunStage();
+        return true;
     }
     void RunStage() {
         print( "Run stage " + Stage );
         if ( Stage >= currentScenario.Stages.Length ) {
             Debug.Log( "End scenario" );
+            runningScenario = false;
             return;
         }
         stageTime = 0f;

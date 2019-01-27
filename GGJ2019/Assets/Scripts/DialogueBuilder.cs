@@ -32,7 +32,7 @@ public class DialogueBuilder : MonoBehaviour {
 
     public void HandleStageEnd() {
         foreach ( DialogueBox db in currentBoxes ) {
-            Destroy( db.gameObject );
+            db.Kill();
         }
         currentBoxes.Clear();
     }

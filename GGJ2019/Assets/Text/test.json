@@ -3,6 +3,18 @@
 			{
 			"ScenarioName" : "Test",
 			"Stages": [
+                {
+                    "id": -1,
+                    "time": 2,
+                    "completion": "time",
+                    "things": [
+                        {
+                            "type": "dialogue",
+                            "owner": "Player",
+                            "text": "I have seen the way."
+                        }
+                    ]
+                },
 				{
 					"id":0,
 					"completion":"confirm",

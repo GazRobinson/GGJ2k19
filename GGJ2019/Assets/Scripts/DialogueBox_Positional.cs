@@ -12,7 +12,7 @@ public class DialogueBox_Positional : DialogueBox {
         lookAt.y = 0f;
         float dot = Vector2.Dot( lookAtTarget, lookAt );
      //   Debug.Log( dot );   
-             canvasGroup.alpha = dot;
+        canvasGroup.alpha = Mathf.Min(1f, dot);
     }
     protected override void OnInit( DialogueManager dm ) {
         base.OnInit( dm );

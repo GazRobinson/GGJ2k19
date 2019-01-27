@@ -41,6 +41,8 @@ public class SG_DDR : SubGame {
     [SerializeField]
     private int gameTime = 0;
 
+    public DDR_Message good, bad;
+
     //Settings
     private int introFrameCount = 45;
 
@@ -103,9 +105,17 @@ public class SG_DDR : SubGame {
         }
         if ( bestNote != null ) {
             Debug.Log( "Sweet!" );
-
+            good.Show( bestNote.spriteRenderer.transform.position );
             noteBuffer.Remove( bestNote );
             Destroy( bestNote.spriteRenderer.gameObject );
+        }
+        else {
+            if ( noteBuffer.Count > 0 ) {
+                bestNote = noteBuffer[0];
+                bad.Show( bestNote.spriteRenderer.transform.position );
+                noteBuffer.Remove( bestNote );
+                Destroy( bestNote.spriteRenderer.gameObject );
+            }
         }
     }
 
@@ -121,7 +131,8 @@ public class SG_DDR : SubGame {
             List<Note> removalList = new List<Note>();
             for ( int i = 0; i < noteBuffer.Count; i++ ) {
                 if ( gameTime > noteBuffer[i].CorrectTime + exitFrameCount ) {
-                    Debug.Log( "Fail" );
+                  //  Debug.Log( "Fail" );
+                    good.Show( noteBuffer[i].spriteRenderer.transform.position );
                     removalList.Add(noteBuffer[i]);
                 }
             }
